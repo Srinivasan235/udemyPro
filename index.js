@@ -14,11 +14,9 @@ const check = new passwordValidator();
 
 mongoose.connect(url, {useNewUrlParser: true, useUnifiedTopology: true});
 
+app.use(express.static(path.join(__dirname, '/public')));
 
-app.use(bodyParser.urlencoded({extended:true}));
-app.use(bodyParser.json());
-// app.use(express.static("public"));
-app.use(express.static(path.join(__dirname, 'public')));
+
 app.set('view engine',"ejs");
 
 
